@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: therialnews_rails
+  username: postgres
+  password: Kronos92
+  host: localhost
+  port: 5432
+
+test:
+  <<: *default
+  database: therialnews_rails_test
+  username: postgres
+  password: Kronos92
+  host: localhost
+
+production:
+  <<: *default
+  database: therialnews_rails_production
+  username: postgres
+  password: <%= ENV["therialnews_rails_DATABASE_PASSWORD"] %>
