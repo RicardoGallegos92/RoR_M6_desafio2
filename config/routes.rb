@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "home/index"
   resources :publications, except: [ :index ]
   get "/publications", to: "publications#index", as: "user_root" # a dónde dirigir al usuario luego de loggearse
+  resources :comments, only: [ :create ]
   # add controllers: {} after /~ rails generate devise:controllers users
   devise_for :users, controllers: {
     sesions: "users/sessions",

@@ -9,15 +9,21 @@ class PublicationsController < ApplicationController
 
   # GET /publications/1 or /publications/1.json
   def show
+    @publication = Publication.find(params[:id])
+    @comment = Comment.new
+    @comments = @publication.comments.order(id: :desc)
   end
 
   # GET /publications/new
   def new
     @publication = Publication.new
+    @user = current_user
+    @comments = Comment.new
   end
 
   # GET /publications/1/edit
   def edit
+    @comment = Comment.new
   end
 
   # POST /publications or /publications.json

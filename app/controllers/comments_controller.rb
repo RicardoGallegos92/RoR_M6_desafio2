@@ -3,8 +3,8 @@ class CommentsController < ApplicationController
 
   def create
     @publication = Publication.find(params[:comment][:publication_id])
-    @comment = Comment.new(comment_params)
-    @comment.user = current_user || "guest"
+    @comment = @publication.comments.new(comment_params)
+    @comment.user = current_user
     respond_to do |format|
       if @comment.save
         format.html { redirect_to publication_path(@publication.id), notice: "Comment was successfully created." }

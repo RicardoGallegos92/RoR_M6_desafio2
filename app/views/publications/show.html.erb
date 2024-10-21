@@ -1,5 +1,5 @@
 <p style="color: green"><%= notice %></p>
-
+<!-- Publicacion -->
 <%= render @publication %>
 
 <div>
@@ -11,3 +11,23 @@
     <% end %>
   <% end %>
 </div>
+
+<% if user_signed_in? %>
+  <h3>Nuevo Comentario :D</h3>
+  <%= render 'comments/form', comment: @comment%>
+<% end %>
+
+<%= render 'comments/comments_publication', comments: @comments %>
+<!-- Comentarios
+<hr>
+<h4>Comentarios:</h4>
+<ul data-lista-comentarios class="container-fluid p-3">
+  <% @comments.each do |comment| %>
+  <div class="comentarioEnShow">
+    <li><strong><%= comment.user.name %>:</strong>
+    <br>
+    <%= comment.text %></li>
+  </div>
+  <% end %>
+</ul>
+-->
