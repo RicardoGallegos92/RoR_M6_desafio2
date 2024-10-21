@@ -2,15 +2,14 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
   get "home/index"
-  devise_for :users
   resources :publications, except: [ :index ]
   get "/publications", to: "publications#index", as: "user_root" # a dónde dirigir al usuario luego de loggearse
-=begin
-, controllers: {
-  sesions: "users/sessions",
-  registrations: "users/registrations"
-}
-=end
+  # add controllers: {} after /~ rails generate devise:controllers users
+  devise_for :users, controllers: {
+    sesions: "users/sessions",
+    registrations: "users/registrations"
+  }
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

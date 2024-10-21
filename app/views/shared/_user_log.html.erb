@@ -5,6 +5,9 @@
   </li>
   <!--  -->
   <li class="nav-item">
+    <%= button_to 'Edit User', edit_user_registration_path, class: 'nav-link', :method => :get %>
+  </li>
+  <li class="nav-item">
     <%= button_to 'Log Out', destroy_user_session_path, class: 'nav-link', :method => :delete %>
   </li>
 <% else %>
