@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Rails:        7.2.1
 
-Things you may want to cover:
-
-* Ruby version
+* Ruby version: 3.3.3
 
 * System dependencies
 
-* Configuration
+* Database creation:
 
-* Database creation
+Create file in `config/application.yml`
+```
+db_username: ""
+db_password: ""
+db_name: ""
 
-* Database initialization
+db_test_name: ""
 
-* How to run the test suite
+db_prod_name: ""
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+email: ""
+email_pass: ""
+```
