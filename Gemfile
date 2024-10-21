@@ -60,4 +60,4 @@ gem "devise", "~> 4.9"
 
 gem "figaro", "~> 1.2"
 
-gem "faker", "~> 3.4"
+gem "faker", "~> 3.5"
