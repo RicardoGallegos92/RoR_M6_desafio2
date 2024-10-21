@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: %i[ :show ]
+  before_action :authenticate_user!, only: %i[ edit update create ]
 
   def create
     @publication = Publication.find(params[:comment][:publication_id])

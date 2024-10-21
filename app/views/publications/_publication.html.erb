@@ -1,5 +1,10 @@
 <div id="<%= dom_id publication %>">
   <p>
+    <strong>User:</strong>
+    <%= publication.user_id %>
+  </p>
+
+  <p>
     <strong>Header:</strong>
     <%= publication.header %>
   </p>
@@ -10,8 +15,7 @@
   </p>
 
   <p>
-    <strong>User:</strong>
-    <%= publication.user_id %>
+    <strong>Fecha:</strong>
+    <%= publication.created_at %>
   </p>
-
 </div>

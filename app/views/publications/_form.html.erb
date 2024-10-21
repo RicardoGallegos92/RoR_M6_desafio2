@@ -12,6 +12,14 @@
   <% end %>
 
   <div>
+    ID user: <%= current_user.id %>
+<!--
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+-->
+  </div>
+
+  <div>
     <%= form.label :header, style: "display: block" %>
     <%= form.text_field :header %>
   </div>
@@ -19,11 +27,6 @@
   <div>
     <%= form.label :body, style: "display: block" %>
     <%= form.text_field :body %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
   </div>
 
   <div>
