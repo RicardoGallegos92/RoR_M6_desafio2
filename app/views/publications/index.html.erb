@@ -2,15 +2,16 @@
 
 <% content_for :title, "Publications" %>
 
+<%= button_to "New publication", new_publication_path, method: :get %>
+
 <h1>Publications</h1>
 
 <div id="publications">
   <% @publications.each do |publication| %>
     <%= render publication %>
     <p>
-      <%= link_to "Show this publication", publication %>
+      <%= button_to "Show this publication", publication, method: :get %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New publication", new_publication_path %>

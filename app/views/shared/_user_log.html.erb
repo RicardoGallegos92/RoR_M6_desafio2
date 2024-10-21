@@ -1,11 +1,7 @@
 <!-- mostramos distintas opciones dependiendo de si el user está loggeado o no -->
 <% if user_signed_in? %>
   <li class="nav-item">
-  <% if current_user.name %>
-    Hola <%= current_user.name %>
-  <% else %>
-    Hola <%= current_user.email %>
-  <% end %>
+    Hola <%= current_user.name || current_user.email %>
   </li>
   <!--  -->
   <li class="nav-item">

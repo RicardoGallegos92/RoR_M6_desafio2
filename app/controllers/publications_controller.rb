@@ -23,7 +23,7 @@ class PublicationsController < ApplicationController
   # POST /publications or /publications.json
   def create
     @publication = Publication.new(publication_params)
-
+    @publication.user = current_user
     respond_to do |format|
       if @publication.save
         format.html { redirect_to @publication, notice: "Publication was successfully created." }

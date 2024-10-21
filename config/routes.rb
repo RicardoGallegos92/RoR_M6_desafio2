@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
-
   get "home/index"
-  resources :publications
   devise_for :users
+  resources :publications, except: [ :index ]
+  get "/publications", to: "publications#index", as: "user_root" # a dónde dirigir al usuario luego de loggearse
 =begin
 , controllers: {
   sesions: "users/sessions",
